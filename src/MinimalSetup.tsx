@@ -64,15 +64,9 @@ const MinimalSetup = () => {
       commitment: "processed",
     });
 
-    const provider = new anchor.Provider(
-      connection,
-      {
-        publicKey: "7oyrzFtYfb8RYGBJ3YgosEXGFe3ezR9NpgeLCnCpcSRX",
-      },
-      {
-        commitment: "processed",
-      },
-    );
+    const provider = new anchor.Provider(connection, wallet, {
+      commitment: "processed",
+    });
 
     const newProgram = new anchor.Program(RandomIdl, programId, provider);
 
